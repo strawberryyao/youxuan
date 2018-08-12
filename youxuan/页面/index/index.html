@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+ <!-- <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale = 1.0,user-scalable =no-->">
+  <title>Title</title>
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/index.css">
+  <link rel="stylesheet" type="text/css" href="../css/iconfont.css">
+  <style>
+    .icon-search {
+      width: .28rem;
+      height: .28rem;
+      left:2.7rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <div style="background: white">
+      <div class="fx ai pd20 por">
+        <img class="logo " src="//yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/indexLogo-11d65342f9.png"
+          alt="logo">
+        <i class="iconfont icon-search poa"></i>
+        <input class="fx1 ml30 tac plr20" type="text" placeholder="搜索商品，共11765款好物">
+      </div>
+      <div class="fx">
+        <div class="w25p tac plr20">
+          <a class="ptb10 bd-b">推荐</a>
+        </div>
+        <div  class="w25p tac plr20">
+          <a class="ptb10">居家</a>
+        </div>
+        <div  class="w25p tac plr20">
+          <a class="ptb10">鞋包配饰</a>
+        </div>
+        <div  class="w25p tac plr20">
+          <a class="ptb10">服装</a>
+        </div>
+        <div  class="w25p tac plr20">
+          <a class="ptb10">电器</a>
+        </div>
+      </div>
+      <div>
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">Slide 1</div>
+            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 3</div>
+          </div>
+          <!-- 如果需要分页器 -->
+          <div class="swiper-pagination"></div>
+
+
+
+          <!-- 如果需要滚动条 -->
+          <div class="swiper-scrollbar"></div>
+        </div>
+      </div>
+      <div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    (function (designWidth) {
+
+      var size = document.documentElement.clientWidth * 100 / designWidth;
+
+      document.documentElement.style.fontSize = size + "px";
+
+      document.body.style.fontSize = "14px";
+
+    })(750)
+  </script>
+</body>
+
+</html>
