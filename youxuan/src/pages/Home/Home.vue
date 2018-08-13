@@ -1,6 +1,7 @@
 <template>
   <div id="home">
     <div class="fix">
+      <DownloadBanner/>
       <!--头部-->
       <Header/>
       <!--头部导航条-->
@@ -131,8 +132,49 @@
         </div>
       </a>
     </header>
+    <GoodsList/>
+    <Split/>
+    <!--显示抢购-->
+    <div class="flashSale">
+      <a href="javascript:;">
+        <div class="bg-w">
+          <div class="left-item">
+            <div class="limitTime">严选限时购</div>
+            <div class="countDown">
+              <span class="h">3</span>
+              <span class="colon">:</span>
+              <span class="min">3</span>
+              <span class="colon">:</span>
+              <span class="sec">3</span>
+            </div>
+            <div class="nextSale">
+              <span>下一场14：00开始</span>
+            </div>
+          </div>
+          <div class="right-item">
+            <img src="http://yanxuan.nosdn.127.net/cf57f10e83e63b83fbec9328fb2a8a4e.png?imageView&quality=85&thumbnail=330x330" alt="">
+            <div class="priceTag">
+              <span>￥82</span>
+              <span>￥117</span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <Split/>
+    <!--福利社-->
+    <div class="weal">
+      <a href="javascript:;" class="weal-bg" >
+      </a>
+    </div>
+    <Split/>
 
+    <!--专题精选-->
+    <div >
+
+    </div>
   </div>
+
 </template>
 
 <script>
@@ -142,7 +184,7 @@
   import Header from '../../components/Header/Header'
   import HeaderScroll from '../../components/HeaderScroll/HeaderScroll'
   import GoodsList from '../../components/GoodsList/GoodsList'
-
+  import DownloadBanner from '../../components/DownloadBanner/DownloadBanner'
 
   export default {
     data() {
@@ -161,7 +203,8 @@
     components: {
       Header,
       HeaderScroll,
-      GoodsList
+      GoodsList,
+      DownloadBanner
     }
   }
 </script>
@@ -285,4 +328,91 @@
         background #F4E9CB
 
 
+  .flashSale
+    width 100%
+    height 3.8rem
+    background #fff
+    box-sizing border-box
+  /*  a
+      width 100%
+      height 100%*/
+      .bg-w
+        padding .3rem .4rem .3rem .56rem
+        margin-bottom .2rem
+        /*box-sizing border-box*/
+        height 3.2rem
+        display flex
+        position relative
+        .left-item
+            padding-top .8rem
+            display flex
+            flex 1
+            flex-direction column
+            height 2.4rem
+            .limitTime
+              color #333
+              font-size .36rem
+              line-height .36rem
+              margin-bottom .24rem
+              letter-spacing .12rem
+            .countDown
+              display flex
+              .h,.min,.sec
+                background #444
+                width .62rem
+                height .56rem
+                display inline-block
+                line-height .56rem
+                text-align center
+                font-size .36rem
+                color #fff
+                border-radius 4px
+              .colon
+                color: #333
+                font-size .3rem
+                width .2rem
+                display inline-block
+                text-align center
+                font-weight 700
+                line-height .56rem
+            .nextSale
+              color: #333
+              font-size .24rem
+              line-height .24rem
+              height .24rem
+              margin-top .4rem
+        .right-item
+            width 3.2rem
+            height 3.2rem
+
+            img
+              width 100%
+              height 100%
+              line-height 3.2rem
+            .priceTag
+              width .96rem
+              height .96rem
+              border-radius 100%
+              position absolute
+              right .45rem
+              bottom .6rem
+              background-color rgba(244,143,24,.95)
+              display flex
+              flex-direction column
+              text-align center
+              align-items center
+              justify-content center
+              span
+                color #fff
+                &:nth-child(2)
+                  text-decoration line-through
+
+  .weal
+    width 7.5rem
+    height 3rem
+    .weal-bg
+      display block
+      background-image url("http://yanxuan.nosdn.127.net/a3ea2d1108c94c7dece05eddf95f6df5.jpg")
+      width 100%
+      height 100%
 </style>

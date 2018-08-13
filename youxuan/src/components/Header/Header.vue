@@ -37,6 +37,7 @@
     background #EDEDED
     line-height .56rem
     border-radius .05rem
+    outline none
   .iconfont
     position absolute
     left 2.5rem

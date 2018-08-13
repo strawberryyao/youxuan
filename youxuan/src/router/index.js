@@ -7,6 +7,9 @@ import Profile from '../pages/Profile/Profile'
 import Login from '../pages/Login/Login'
 import Recognize from '../pages/Recognize/Recognize'
 import ShopCart from '../pages/ShopCart/ShopCart'
+import Interlayer from '../pages/Interlayer/Interlayer'
+import DownloadApp from '../components/DownloadApp/DownloadApp'
+import Search from '../pages/Search/Search'
 
 
 Vue.use(VueRouter)
@@ -36,6 +39,22 @@ export default new VueRouter({
     {
       path: '/recognize',
       component:Recognize
+    },
+    {
+      path:'/interlayer',
+      component:Interlayer
+    },
+    {
+      path:'/downloadapp',
+      component:DownloadApp
+    },
+    {
+      path:'/search',
+      component:Search
+    },
+    {
+      path:'/',
+      redirect:'/home'
     }
   ]
 })

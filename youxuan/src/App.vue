@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-
+    <MaskGift/>
     <router-view></router-view>
 
   </div>
 </template>
 <script>
   //import FooterGuide from './components/FooterGuide/FooterGuide'
-  import Home from './pages/Home/Home'
+  import Mask from './components/Mask/Mask'
   export default {
     components:{
-      Home
+      MaskGift:Mask
     }
   }
 </script>
