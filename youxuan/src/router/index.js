@@ -18,15 +18,24 @@ export default new VueRouter({
   routes: [
     {
       path: '/home',
-      component:Home
+      component:Home,
+      meta:{
+        showFooter:true
+      }
     },
     {
       path: '/classify',
-      component:Classify
+      component:Classify,
+      meta:{
+        showFooter:true
+      }
     },
     {
       path: '/shopcart',
-      component:ShopCart
+      component:ShopCart,
+      meta:{
+        showFooter:true
+      }
     },
     {
       path: '/login',
@@ -34,11 +43,17 @@ export default new VueRouter({
     },
     {
       path: '/profile',
-      component:Profile
+      component:Profile,
+      meta:{
+        showFooter:false
+      }
     },
     {
       path: '/recognize',
-      component:Recognize
+      component:Recognize,
+      meta:{
+        showFooter:true
+      }
     },
     {
       path:'/interlayer',
@@ -46,7 +61,8 @@ export default new VueRouter({
     },
     {
       path:'/downloadapp',
-      component:DownloadApp
+      component:DownloadApp,
+      redirect:'/home'
     },
     {
       path:'/search',

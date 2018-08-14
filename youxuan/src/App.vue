@@ -2,15 +2,17 @@
   <div id="app">
     <MaskGift/>
     <router-view></router-view>
-
+    <FooterGuide v-show="$route.meta.showFooter"/>
   </div>
 </template>
 <script>
-  //import FooterGuide from './components/FooterGuide/FooterGuide'
+  /*$route.meta.showFooter 控制底部导航是否显示*/
+  import FooterGuide from './components/FooterGuide/FooterGuide'
   import Mask from './components/Mask/Mask'
   export default {
     components:{
-      MaskGift:Mask
+      MaskGift:Mask,
+      FooterGuide
     }
   }
 </script>
