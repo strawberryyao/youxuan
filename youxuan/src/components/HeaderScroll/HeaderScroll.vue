@@ -2,9 +2,9 @@
   <div class="wrap" ref="wrapper">
     <ul class="scrollList" ref="scrollList">
       <li class="item2 " :class="{'item1':index===0}" style="margin-left: 0" ref="item2"
-          v-for="(item,index) in data" :key="index">
+          v-for="(name,index) in navlist" :key="index">
         <span class="inner-box" :class="{'active':current === index}" @click="currentIndex(index)">
-           {{item.name}}
+           {{name}}
         </span>
       </li>
     </ul>
@@ -20,6 +20,7 @@
     data() {
       return {
         current:0,
+        navlist: ['推荐', '居家', '配件', '服装', '电器', '洗护', '饮食', '餐厨', '婴童', '文体', '特色区','','','',''],
       }
     },
     computed:{
@@ -37,7 +38,7 @@
     watch:{
       data(){
         this.$nextTick(()=>{
-        //  this.$store.dispatch('getData')
+        /*//  this.$store.dispatch('getData')
           //给ul指定新的宽度
           const ul = this.$refs.scrollList
           const li = this.$refs.item2
@@ -48,7 +49,7 @@
           const liWid = 88         //每个li的 width
           const space = 48       //每个li的 padding-left
           const between = 60      //li两边的margin-left
-          ul.style.width = (liWid+space) * (size+1) + 30 +'px'
+          ul.style.width = (liWid+space) * (size+1) + 30 +'px'*/
           this.$nextTick(() => {
             this.scroll = new BScroll(this.$refs.wrapper, {
               click: true,
@@ -75,7 +76,8 @@
  .wrap
    background #fff
   .scrollList
-    display flex
+    display inline-flex
+    margin-right .4rem
     padding 0 .3rem
     align-item2s center
     background #fff

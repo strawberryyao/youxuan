@@ -2,7 +2,7 @@
     <div class="down-load-banner" ref="appBanner">
       <div class="g-row">
         <div class="close">
-          <i class="iconfont icon-guanbi1" @click="closeApp"></i>
+          <i class="iconfont icon-guanbi1" @click="$emit('closeApp')" ></i>
         </div>
         <div class="sub-title">
           <div class="bg-logo">
@@ -13,20 +13,15 @@
             <p class="txt2">立即领取APP新人专享1000元礼包</p>
           </div>
         </div>
-        <a href="javascript" class="open-app">打开APP</a>
+        <a href="javascript:;" class="open-app">打开APP</a>
       </div>
     </div>
 </template>
 
 <script>
   export default {
-    data() {
-      return {}
-    },
     methods: {
-      closeApp(){
-        this.$refs.appBanner.style.display = 'none'
-      }
+
     },
     components: {}
   }

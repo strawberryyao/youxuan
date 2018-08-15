@@ -1,15 +1,15 @@
 <template>
   <div id="home">
     <div class="fix">
-      <DownloadBanner/>
+      <DownloadBanner v-show="isShow" @closeApp="closeApp()"/>
       <!--头部-->
       <Header/>
       <!--头部导航条-->
       <HeaderScroll/>
     </div>
     <!--轮播-->
-    <div class="mt254">
-      <div class="swiper-container">
+    <div :class="isShow?'mt254':'mt158'">
+      <div class="swiper-container" v-if="banners.length>0">
         <div class="swiper-wrapper">
           <div class="swiper-slide" v-for="(item,index) in banners" :key="index">
             <a href="javascript:">
@@ -184,13 +184,17 @@
 
   export default {
     data() {
-      return {}
+      return {
+        isShow:true
+      }
     },
     computed:{
       ...mapState(['homeData','data','banners'])
     },
     methods: {
-
+      closeApp(){
+        this.isShow = false
+      }
     },
     mounted() {
       this.$store.dispatch('getData')
