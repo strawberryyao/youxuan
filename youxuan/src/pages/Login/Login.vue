@@ -6,21 +6,21 @@
       </div>
       <div class="formWrap">
         <div class="phone-input">
-          <input type="text" placeholder="请输入手机号">
+          <input type="text" :placeholder="type==='phone'?'请输入手机号':'邮箱账号'">
         </div>
         <div class="auth-code">
-          <input type="text" placeholder="请输入验证码">
-          <span class="getAuthcode">获取验证码</span>
+          <input type="text" :placeholder="type==='phone'?'请输入验证码':'密码'">
+          <span class="getAuthcode" v-if="type==='phone'">获取验证码</span>
         </div>
         <div class="problem">
-          <span>遇到问题?</span>
-          <span>使用密码验证登录</span>
+          <span>{{type==='phone'?'遇到问题?':'注册账号'}}</span>
+          <span>{{type==='phone'?'使用密码验证登录':'忘记密码'}}</span>
         </div>
       </div>
       <div class="btnWrap">
-        <div class="loginByphone" @click="$router.replace('/login')"><span>登录</span></div>
-        <div class="loginByemail"><span>其他登录方式</span></div>
-        <div class="registerByphone"><span>手机号快捷注册 </span><i  class="iconfont icon-jiantou"></i></div>
+        <div class="loginByphone" ><span>登录</span></div>
+        <div class="loginByemail" @click="$router.push('/profile')"><span>其他登录方式</span></div>
+        <div class="registerByphone" v-if="type==='phone'"><span>手机号快捷注册 </span><i  class="iconfont icon-jiantou"></i></div>
       </div>
 
 
@@ -29,9 +29,12 @@
 
 <script>
   import LoginHeader from './LoginHeader'
+  import { Toast } from 'mint-ui'
   export default {
     data() {
-      return {}
+      return {
+        type:this.$route.query.type,
+      }
     },
     methods: {},
     components: {
@@ -43,7 +46,6 @@
 <style lang="stylus" rel="stylesheet/stylus">
   #login-bg
     background-color #fff
-    width 100%
     .logo-wrap
       text-align center
       padding-top 1.6rem

@@ -5,8 +5,8 @@
       <img src="//yanxuan.nosdn.127.net/bd139d2c42205f749cd4ab78fa3d6c60.png" alt="">
     </div>
     <div class="btnWrap">
-      <div class="loginByphone" @click="$router.replace('/login')"><i class="iconfont icon-shouji" ></i><span>手机号码登录</span></div>
-      <div class="loginByemail"><i class="iconfont icon-email" ></i><span>邮箱账号登录</span></div>
+      <div class="loginByphone" @click="$router.replace('/login?type=phone')"><i class="iconfont icon-shouji" ></i><span>手机号码登录</span></div>
+      <div class="loginByemail" @click="$router.replace('/login?type=email')"><i class="iconfont icon-email" ></i><span>邮箱账号登录</span></div>
       <div class="registerByphone"><span>手机号快捷注册</span><i  class="iconfont icon-jiantou"></i></div>
     </div>
     <div class="loginType">
